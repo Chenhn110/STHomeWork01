@@ -73,7 +73,7 @@ public class StudentManager implements StudentInterface {
         }else if(sex.equals("女")){
             gender = false;
         }else{
-            System.out.println("您输入的性别不合法");
+            System.out.println("您输入的性别不合法！");
         }
 
         list.add(new Student(ID, name, birDate, gender));
@@ -167,11 +167,11 @@ public class StudentManager implements StudentInterface {
                 list.set(i,new Student(IDNew, nameNew, birDateNew, genderNew));
                 Collections.sort(list, new Comparator<Student>(){
                     @Override
-                    public int compare(Student stu1, Student stu2){
-                        int diff = stu1.getID() - stu2.getID();
-                        if(diff > 0){
+                    public int compare(Student stu3, Student stu4){
+                        int tmp = stu3.getID() - stu4.getID();
+                        if(tmp > 0){
                             return 1;
-                        }else if(diff < 0){
+                        }else if(tmp < 0){
                             return -1;
                         }
                         return 0;
@@ -192,10 +192,9 @@ public class StudentManager implements StudentInterface {
     public void findOnlyStudent(ArrayList<Student> list) {
         Scanner sc = new Scanner(System.in);
         System.out.println("输入要查找的学生的姓名：");
-        //String name = sc.next();
+        String name = sc.next();
 
         for (Student stus:list){
-            String name = sc.next();
                 if (stus.getName().contains(name)){
                     System.out.println(stus.toString());
                 }else{
