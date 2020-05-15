@@ -51,7 +51,6 @@ public class Student {
 
     @Override
     public  String toString(){
-        //return "{学号: " + this.ID + ", 姓名: " + this.name + ", 出生日期: " + this.birDate + ", 性别（男：true，女:false ）: " + this.gender + "}";
         if(this.gender){
             return "{学号: " + this.ID + ", 姓名: " + this.name + ", 出生日期: " + this.birDate + ", 性别: 男"  + "}";
         }else{
